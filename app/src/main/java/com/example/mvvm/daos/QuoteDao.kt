@@ -1,20 +1,18 @@
 package com.example.mvvm.daos
 
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
+import androidx.room.*
+import com.example.mvvm.models.QuoteEntity
 import com.example.mvvm.models.QuoteModel
 
 @Dao
 interface QuoteDao {
-
     @Query("SELECT * FROM quotes")
-    fun getQuote(): QuoteModel
+    fun getQuotes(): MutableList<QuoteEntity>
 
     @Insert
-    fun insertQuote(author: String, quote: String)
+    fun insertQuote(quoteEntity: QuoteEntity)
 
-    @Query("DELETE FROM quotes WHERE id = :itemId")
-    fun deleteQuote(itemId: Int)
+
+    @Delete
+    fun deleteQuote(quoteEntity: QuoteEntity)
 }

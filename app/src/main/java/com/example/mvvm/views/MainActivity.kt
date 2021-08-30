@@ -18,12 +18,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        quoteViewModel.quoteModel.observe(this, {
-            binding.tvAuthor.text = it.author
-            binding.tvQuote.text = it.quote
-        })
-
-        binding.viewContainer.setOnClickListener { quoteViewModel.getRandomQuote() }
     }
+
 }

@@ -6,7 +6,6 @@ import com.example.mvvm.daos.QuoteDao
 import com.example.mvvm.models.QuoteEntity
 
 @Database(entities = [QuoteEntity::class], version = 1)
-abstract class Database: RoomDatabase()  {
+abstract class Database(): RoomDatabase()  {
     abstract fun quoteDao(): QuoteDao
-
 }
